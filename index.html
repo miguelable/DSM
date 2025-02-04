@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
   <head>
-    <script src="../assets/js/color-modes.js"></script>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <meta
-      name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-    />
+    <meta name="author" content="Miguel Ferrer, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.122.0" />
     <title>Miguel Ferrer Bootstrap</title>
 
@@ -105,6 +100,19 @@
 
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
+      }
+
+      /* Estilos para forzar el modo claro en el carrusel */
+      .calor-light {
+        color: #fff !important;
+      }
+
+      .background-light {
+        background-color: #fff !important;
+      }
+
+      .invert-light {
+        filter: invert(0) !important;
       }
     </style>
 
@@ -258,19 +266,21 @@
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide-to="0"
-            class="active"
+            class="background-light active"
             aria-current="true"
             aria-label="Slide 1"
           ></button>
           <button
             type="button"
             data-bs-target="#myCarousel"
+            class="background-light"
             data-bs-slide-to="1"
             aria-label="Slide 2"
           ></button>
           <button
             type="button"
             data-bs-target="#myCarousel"
+            class="background-light"
             data-bs-slide-to="2"
             aria-label="Slide 3"
           ></button>
@@ -287,8 +297,10 @@
             />
             <div class="container">
               <div class="carousel-caption">
-                <h1>Sistemas de comunicaciones avanzados</h1>
-                <p class="opacity-75">
+                <h1 class="calor-light">
+                  Sistemas de comunicaciones avanzados
+                </h1>
+                <p class="opacity-75 calor-light">
                   Asignatura dedicada al estudio de las tecnologías de
                   comunicaciones avanzadas.
                 </p>
@@ -309,8 +321,8 @@
             />
             <div class="container">
               <div class="carousel-caption">
-                <h1>Despliegue de servicios multimedia</h1>
-                <p>
+                <h1 class="calor-light">Despliegue de servicios multimedia</h1>
+                <p class="opacity-75 calor-light">
                   Asignatura dedicada a la creación de servicios multimedia.
                 </p>
                 <p><a class="btn btn-lg btn-primary" href="#">Saber más</a></p>
@@ -328,8 +340,8 @@
             />
             <div class="container">
               <div class="carousel-caption">
-                <h1>Redes de nueva generación</h1>
-                <p>
+                <h1 class="calor-light">Redes de nueva generación</h1>
+                <p class="opacity-75 calor-light">
                   Asignatura dedicada al estudio de las redes de nueva
                   generación.
                 </p>
@@ -346,7 +358,10 @@
           data-bs-target="#myCarousel"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            class="carousel-control-prev-icon invert-light"
+            aria-hidden="true"
+          ></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button
@@ -355,7 +370,10 @@
           data-bs-target="#myCarousel"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            class="carousel-control-next-icon invert-light"
+            aria-hidden="true"
+          ></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -443,8 +461,8 @@
             <img
               src="../img/stream.png"
               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
+              width="400"
+              height="400"
               alt="Despliegue de Servicios Multimedia"
               style="object-fit: cover; object-position: center"
             />
@@ -468,7 +486,7 @@
           </div>
           <div class="col-md-5 order-md-1">
             <img
-              src="../img/5g.png"
+              src="../img/servidor.gif"
               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
               width="400"
               height="400"
@@ -496,10 +514,10 @@
           </div>
           <div class="col-md-5">
             <img
-              src="../img/radar.png"
+              src="../img/antena.png"
               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
+              width="400"
+              height="400"
               alt="Sistemas de Comunicaciones Avanzados"
               style="object-fit: cover; object-position: center"
             />
@@ -522,5 +540,6 @@
       </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/color-modes.js"></script>
   </body>
 </html>
