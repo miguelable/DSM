@@ -106,3 +106,8 @@ footer {
   .invert-light {
     filter: invert(0) !important;
 }
+
+body.dark-mode .bg-light {
+  background-color: #343a40 !important; /* Color de fondo oscuro */
+  color: #f8f9fa !important; /* Color de texto claro */
+}
