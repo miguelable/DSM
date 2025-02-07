@@ -1,3 +1,21 @@
+/* Estilos generales */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -87,4 +105,4 @@
 
   .invert-light {
     filter: invert(0) !important;
-  }
+}
