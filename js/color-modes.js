@@ -11,6 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.documentElement.setAttribute("data-bs-theme", newTheme);
       themeText.textContent = `Toggle theme (${newTheme})`;
+
+      // Añadir o quitar la clase dark-mode en el body
+      if (newTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
     });
   });
+
+  // Verificar el tema inicial y aplicar la clase dark-mode si es necesario
+  const initialTheme = document.documentElement.getAttribute("data-bs-theme");
+  if (initialTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
 });
