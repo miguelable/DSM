@@ -143,29 +143,31 @@
                   class="nav-link active"
                   aria-current="page"
                   href="html/form.html"
+                  id="home_text"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Admin</a>
+                <a class="nav-link" href="#" id="admin_text">Administración</a>
               </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
-                  id="languageDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  id="language_text"
                 >
                   Idiomas
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <ul class="dropdown-menu" aria-labelledby="language_text">
                   <li>
                     <a
                       class="dropdown-item"
                       href="#"
                       onclick="changeLanguage('es')"
+                      id="spanish_text"
                       >Español</a
                     >
                   </li>
@@ -174,6 +176,7 @@
                       class="dropdown-item"
                       href="#"
                       onclick="changeLanguage('en')"
+                      id="english_text"
                       >Inglés</a
                     >
                   </li>
@@ -182,6 +185,7 @@
                       class="dropdown-item"
                       href="#"
                       onclick="changeLanguage('fr')"
+                      id="french_text"
                       >Francés</a
                     >
                   </li>
@@ -194,8 +198,13 @@
                 type="search"
                 placeholder="Buscar"
                 aria-label="Buscar"
+                id="search_input"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button
+                class="btn btn-outline-success"
+                type="submit"
+                id="search_text"
+              >
                 Buscar
               </button>
             </form>
