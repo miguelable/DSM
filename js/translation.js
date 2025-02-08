@@ -10,6 +10,11 @@ const translations = {
     english_text: "Inglés",
     french_text: "Francés",
     search_text: "Buscar",
+    SCA_text: "Sistemas de comunicaciones avanzados",
+    SCA_text_1_description:
+      "Asignatura dedicada al estudio de las tecnologías de comunicaciones avanzadas.",
+    SCA_text_2_description: "Domina las tecnologías de comunicación.",
+    know_more_text: "Saber más",
   },
   en: {
     light_text: "Light",
@@ -22,6 +27,11 @@ const translations = {
     english_text: "English",
     french_text: "French",
     search_text: "Search",
+    SCA_text: "Advanced communication systems",
+    SCA_text_1_description:
+      "Subject dedicated to the study of advanced communication technologies.",
+    SCA_text_2_description: "Master communication technologies.",
+    know_more_text: "Know more",
   },
   fr: {
     light_text: "Lumière",
@@ -34,6 +44,11 @@ const translations = {
     english_text: "Anglais",
     french_text: "Français",
     search_text: "Rechercher",
+    SCA_text: "Systèmes de communication avancés",
+    SCA_text_1_description:
+      "Matière dédiée à l'étude des technologies de communication avancées.",
+    SCA_text_1_description: "Maîtrisez les technologies de communication.",
+    know_more_text: "En savoir plus",
   },
 };
 
@@ -63,4 +78,20 @@ function changeLanguage(lang) {
     translations[lang].search_text;
   document.getElementById("search_input").placeholder =
     translations[lang].search_text;
+
+  // Cambiar el idioma al resto de textos
+  document.getElementById("SCA_text_1").textContent =
+    translations[lang].SCA_text;
+  document.getElementById("SCA_text_2").textContent =
+    translations[lang].SCA_text;
+  document.getElementById("SCA_text_3").textContent =
+    translations[lang].SCA_text;
+  document.getElementById("SCA_text_1_description").textContent =
+    translations[lang].SCA_text_1_description;
+  document.getElementById("SCA_text_2_description").textContent =
+    translations[lang].SCA_text_2_description;
+  const knowMoreElements2 = document.getElementsByClassName("SCA_text");
+  for (let i = 0; i < knowMoreElements2.length; i++) {
+    knowMoreElements2[i].textContent = translations[lang].SCA_text;
+  }
 }
