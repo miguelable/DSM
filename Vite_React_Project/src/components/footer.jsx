@@ -1,11 +1,14 @@
-
 // Import styles
-import '../styles/footer.css';
+import "../styles/footer.css";
 
 function Footer() {
   return (
-    <footer className="bg-light text-center py-3">
-      <p className="mb-0">&copy; 2025 Mi Aplicación. Todos los derechos reservados.</p>
+    <footer className="container mt-5 mt-auto">
+      <p>
+        &copy; 2017–2025 Company, Inc. &middot;
+        <a href="#">Privacidad</a> &middot;
+        <a href="#">Términos</a>
+      </p>
     </footer>
   );
 }
