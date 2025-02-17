@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header data-bs-theme="dark">
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             RideYourWorld
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -20,46 +22,46 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active"
                   aria-current="page"
-                  href="#"
+                  to="/"
                   id="home_text"
                 >
-                  Inicio
-                </a>
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" id="admin_text">
-                  Administración
-                </a>
+                <Link className="nav-link" to="/" id="admin_text">
+                  Admin
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <Link
                   className="nav-link dropdown-toggle"
-                  href="#"
+                  to="/"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   id="language_text"
                 >
-                  Idiomas
-                </a>
+                  Language
+                </Link>
                 <ul className="dropdown-menu" aria-labelledby="language_text">
                   <li>
-                    <a className="dropdown-item" href="#" id="spanish_text">
-                      Español
-                    </a>
+                    <Link className="dropdown-item" to="/" id="spanish_text">
+                      Spanish
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#" id="english_text">
-                      Inglés
-                    </a>
+                    <Link className="dropdown-item" to="/" id="english_text">
+                      English
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#" id="french_text">
-                      Francés
-                    </a>
+                    <Link className="dropdown-item" to="/" id="french_text">
+                      French
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -68,8 +70,8 @@ function Header() {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Buscar"
-                aria-label="Buscar"
+                placeholder="Search"
+                aria-label="Search"
                 id="search_input"
               />
               <button
@@ -77,7 +79,7 @@ function Header() {
                 type="submit"
                 id="search_text"
               >
-                Buscar
+                Search
               </button>
             </form>
           </div>
