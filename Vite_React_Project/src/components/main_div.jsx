@@ -1,32 +1,16 @@
-import PropTypes from "prop-types";
+import GpxViewer from "./gpx/gpx_viewer";
 
-function Main({ count, setCount }) {
+function Main() {
   return (
     <main className="flex-grow-1">
       <div className="text-center">
-        <h1>Vite + React</h1>
+        <h1>Import a GPX</h1>
         <div className="card p-3 mb-3">
-          <button
-            className="btn btn-primary"
-            onClick={() => setCount((count) => count + 1)}
-          >
-            count is {count}
-          </button>
-          <p className="mt-3">
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
+          <GpxViewer />
         </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
       </div>
     </main>
   );
 }
-
-Main.propTypes = {
-  count: PropTypes.number.isRequired,
-  setCount: PropTypes.func.isRequired,
-};
 
 export default Main;
