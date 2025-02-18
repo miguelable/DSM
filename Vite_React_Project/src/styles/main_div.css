@@ -1,0 +1,73 @@
+#main_div {
+  height: auto; /* Ajustar la altura al contenido */
+  width: auto; /* Ajustar el ancho al contenido */
+  max-width: 45vw; /* Limitar el ancho máximo */
+  max-height: 85vh; /* Limitar la altura máxima */
+  background-color: #f0f0f0; /* Cambiar a un color más claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  margin: 10vh auto; /* Ajustar el margen */
+  border: 2px solid #ccc; /* Añadir un borde */
+  padding: 20px; /* Añadir padding */
+}
+
+.container {
+  background-color: #e0e0e0; /* Cambiar a un color más claro */
+  height: auto; /* Ajustar la altura al contenido */
+  width: auto; /* Ajustar el ancho al contenido */
+  max-width: 90%; /* Limitar el ancho máximo */
+  max-height: 80%; /* Limitar la altura máxima */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacio entre los elementos */
+  padding: 10px; /* Añadir padding */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+input {
+  margin: 10px;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  background-color: #808080;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+button.active {
+  background-color: #505050;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
