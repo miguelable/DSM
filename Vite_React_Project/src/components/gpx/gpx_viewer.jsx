@@ -4,6 +4,9 @@ import { MapContainer, Polyline, TileLayer } from "react-leaflet";
 
 const GpxViewer = () => {
   const [positions, setPositions] = useState([]);
+  const [mapType, setMapType] = useState(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  );
 
   const handleFileUpload = (event) => {
     const uploadedFile = event.target.files[0];
@@ -33,16 +36,32 @@ const GpxViewer = () => {
     reader.readAsText(uploadedFile);
   };
 
+  const handleMapTypeChange = (event) => {
+    setMapType(event.target.value);
+  };
+
   return (
     <div>
       <input type="file" accept=".gpx" onChange={handleFileUpload} />
+      <select
+        onChange={handleMapTypeChange}
+        value={mapType}
+        className="form-select mt-3 w-50"
+      >
+        <option value="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png">
+          OpenStreetMap
+        </option>
+        <option value="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png">
+          OpenTopoMap
+        </option>
+      </select>
       {positions.length > 0 && (
         <MapContainer
           center={positions[0]}
           zoom={9}
           style={{ height: "50vh", width: "100uw", marginTop: "1rem" }}
         >
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <TileLayer url={mapType} />
           <Polyline pathOptions={{ color: "blue" }} positions={positions} />
         </MapContainer>
       )}

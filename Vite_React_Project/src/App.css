@@ -17,4 +17,5 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 56px; /* Margen superior igual a la altura del header */
 }
