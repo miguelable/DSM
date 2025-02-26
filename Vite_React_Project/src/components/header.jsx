@@ -22,12 +22,7 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/"
-                  id="home_text"
-                >
+                <Link className="nav-link" to="/" id="home_text">
                   Home
                 </Link>
               </li>
@@ -64,6 +59,11 @@ function Header() {
                     </Link>
                   </li>
                 </ul>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/" id="login_text">
+                  Login
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
