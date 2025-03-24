@@ -1,92 +1,155 @@
-import { Link } from "react-router-dom";
+import "../styles/Header.css";
+import { Nav } from "react-bootstrap";
+import { NavLink, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ carrito, usuario }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const totalItems = Object.values(carrito).reduce(
+    (acc, item) => acc + item,
+    0
+  );
+  const navigate = useNavigate();
+  // Cerrar el menú cuando la pantalla se agranda
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1000) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      const menu = document.querySelector(".nav");
+      const toggle = document.querySelector(".menu-toggle");
+      // Si el clic es fuera del menú y fuera del botón de menú
+      if (
+        menuOpen &&
+        menu &&
+        !menu.contains(event.target) &&
+        !toggle.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
+
+  const location = useLocation();
+
   return (
-    <header data-bs-theme="dark">
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            RideYourWorld
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <header className="header">
+      <div className="header-title-container" onClick={() => navigate("/") } style={{ cursor: "pointer" }}>
+        <img src="icon.png" alt="Logo" className="header-logo" />
+        <h2>NFT MarketPlace</h2>
+      </div>
+
+      <button
+        className="menu-toggle"
+        onMouseEnter={() => setMenuOpen(true)}
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
+        ☰
+      </button>
+
+      <Nav
+        className={`nav ${menuOpen ? "open" : "closed"} ${
+          usuario ? "user-present" : "no-user"
+        }`}
+        onMouseLeave={() => setMenuOpen(false)}
+      >
+        <Nav.Item>
+          <NavLink
+            to="/"
+            className={`nav-item ${location.pathname === "/" ? "active" : ""}`}
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav me-auto mb-2 mb-md-0">
-              <li className="nav-item">
-                <Link className="nav-link" to="/" id="home_text">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/" id="admin_text">
-                  Admin
-                </Link>
-              </li>
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  id="language_text"
-                >
-                  Language
-                </Link>
-                <ul className="dropdown-menu" aria-labelledby="language_text">
-                  <li>
-                    <Link className="dropdown-item" to="/" id="spanish_text">
-                      Spanish
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/" id="english_text">
-                      English
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/" id="french_text">
-                      French
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/" id="login_text">
-                  Login
-                </Link>
-              </li>
-            </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                id="search_input"
-              />
-              <button
-                className="btn btn-outline-success"
-                type="submit"
-                id="search_text"
+            Inicio
+          </NavLink>
+        </Nav.Item>
+        <Nav.Item>
+          <NavLink
+            to="/contacto"
+            className={`nav-item ${
+              location.pathname === "/contacto" ? "active" : ""
+            }`}
+          >
+            Contacto
+          </NavLink>
+        </Nav.Item>
+        <Nav.Item>
+          <NavLink
+            to="/productos"
+            className={`nav-item ${
+              location.pathname === "/productos" ? "active" : ""
+            }`}
+          >
+            Productos
+          </NavLink>
+        </Nav.Item>
+        <Nav.Item>
+          <NavLink
+            to="/mis-nfts"
+            className={`nav-item ${
+              location.pathname === "/mis-nfts" ? "active" : ""
+            }`}
+          >
+            Mis NFTs
+          </NavLink>
+        </Nav.Item>
+        <Nav.Item>
+          {usuario ? (
+            <Nav.Item className="user-container">
+              <NavLink
+                to="/usuario"
+                className={`margin-top nav-item user-link ${
+                  location.pathname === "/usuario" ? "active" : ""
+                }`}
               >
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
+                {usuario.Nombre}
+              </NavLink>
+              <FaUser size={24} color="#ffffff" />
+            </Nav.Item>
+          ) : (
+            <Nav.Item>
+              <NavLink
+                to="/login"
+                className={`nav-item ${
+                  location.pathname === "/login" ? "active" : ""
+                }`}
+              >
+                Login
+              </NavLink>
+            </Nav.Item>
+          )}
+        </Nav.Item>
+        <Nav.Item>
+          <NavLink
+            to="/carrito"
+            className={`nav-item ${
+              location.pathname === "/carrito" ? "active" : ""
+            }`}
+          >
+            <FaShoppingCart size={24} color="#ffffff" />
+            <span className="cart-count">{totalItems}</span>
+          </NavLink>
+        </Nav.Item>
+      </Nav>
     </header>
   );
 }
+
+Header.propTypes = {
+  carrito: PropTypes.object.isRequired,
+  usuario: PropTypes.object,
+};
 
 export default Header;

@@ -1,0 +1,8 @@
+.upload-btn {
+  background-color: #7795aa;
+  border: none;
+}
+
+.upload-btn:hover {
+  background-color: #5678a0;
+}

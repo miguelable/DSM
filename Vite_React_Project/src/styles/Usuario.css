@@ -1,0 +1,57 @@
+.container-usuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.logout-icon {
+  display: none;
+}
+
+.logout-text {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .logout-text {
+    display: none;
+  }
+  .logout-icon {
+    display: inline-block;
+  }
+}
+
+.modal-footer .btn {
+  width: 140px;
+  height: 45px;
+  font-size: 16px;
+}
+
+.pedidos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}

@@ -1,0 +1,57 @@
+.productos-container {
+  padding: 20px;
+  gap: 20px; /* Añadir espacio entre las tarjetas */
+}
+
+.productos-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  margin-bottom: 20px; /* Añadir margen inferior */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+button {
+  width: 50px; /* Aumentar el tamaño del botón */
+  height: 50px;
+  font-size: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 46px; /* Ajustar el line-height */
+  padding: 5px; /* Añadir padding */
+}
+
+span {
+  font-size: 18px;
+  line-height: 40px;
+  display: inline-block;
+  width: 40px;
+}
+
+.modal-close-button {
+  width: 100px;
+}
