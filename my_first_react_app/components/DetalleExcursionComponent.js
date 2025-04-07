@@ -1,8 +1,10 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { Card } from "@rneui/themed";
+
 function RenderExcursion(props) {
   const excursion = props.excursion;
+
   if (excursion != null) {
     return (
       <Card>
