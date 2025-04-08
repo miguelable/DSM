@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, ScrollView, View } from "react-native";
+import { Text, ScrollView, View, StyleSheet } from "react-native";
 import { Card } from "@rneui/themed";
 import { EXCURSIONES } from "../common/excursiones";
 import { CABECERAS } from "../common/cabeceras";
@@ -10,17 +10,53 @@ function RenderItem(props) {
 
   if (item != null) {
     return (
-      <Card>
-        <Card.Title>{item.nombre}</Card.Title>
-        <Card.Divider />
-        <Card.Image source={require("./imagenes/40Años.png")}></Card.Image>
-        <Text style={{ margin: 20 }}>{item.descripcion}</Text>
+      <Card containerStyle={styles.cardContainer}>
+        <View style={styles.imageContainer}>
+          <Card.Image
+            source={item.imagen ? item.imagen : require("./imagenes/40Años.png")}
+            style={styles.image}
+          />
+          <Text style={styles.title}>{item.nombre}</Text>
+        </View>
+        <Text style={styles.description}>{item.descripcion}</Text>
       </Card>
     );
   } else {
     return <View></View>;
   }
 }
+
+// Estilos separados
+const styles = StyleSheet.create({
+  cardContainer: {
+    padding: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    
+    borderRadius: 10,
+  },
+  imageContainer: {
+    position: "relative",
+  },
+  image: {
+    height: 200, // Ajusta la altura de la imagen
+  },
+  title: {
+    position: "absolute",
+    left: 10,
+    top: 10, // Ajusta la posición verticalq
+    color: "rgb(190, 83, 1)", // Color naranja
+    fontSize: 30, // Tamaño de texto más grande
+    fontWeight: "bold", // Negrita para mayor visibilidad
+    backgroundColor: "rgba(255, 255, 255, 0.7)", // Fondo blanco semitransparente
+    padding: 5, // Espaciado interno
+    borderRadius: 5, // Bordes redondeados
+  },
+  description: {
+    margin: 20,
+  },
+});
 
 class Home extends Component {
   constructor(props) {

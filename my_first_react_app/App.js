@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import Campobase from "./components/CampobaseComponent";
@@ -9,7 +8,6 @@ export default function App() {
     <SafeAreaProvider>
       <View style={styles.container}>
         <Campobase />
-        <StatusBar style="auto" />
       </View>
     </SafeAreaProvider>
   );
