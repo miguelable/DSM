@@ -62,7 +62,7 @@ function HomeNavegador() {
 function ContactoNavegator() {
   return (
     <Stack.Navigator
-      initialRouteName="Contacto"
+      initialRouteName="ContactoGaztaroa"
       screenOptions={{
         headerMode: "screen",
         headerTintColor: "#fff", // Texto blanco
@@ -71,7 +71,7 @@ function ContactoNavegator() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Contacto" component={Contacto} />
+      <Stack.Screen name="ContactoGaztaroa" component={Contacto} />
     </Stack.Navigator>
   );
 }
