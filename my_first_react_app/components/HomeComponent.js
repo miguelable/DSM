@@ -13,7 +13,9 @@ function RenderItem(props) {
       <Card containerStyle={styles.cardContainer}>
         <View style={styles.imageContainer}>
           <Card.Image
-            source={item.imagen ? item.imagen : require("./imagenes/40Años.png")}
+            source={
+              item.imagen ? item.imagen : require("./imagenes/40Años.png")
+            }
             style={styles.image}
           />
           <Text style={styles.title}>{item.nombre}</Text>
@@ -30,28 +32,24 @@ function RenderItem(props) {
 const styles = StyleSheet.create({
   cardContainer: {
     padding: 0,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    
     borderRadius: 10,
   },
   imageContainer: {
     position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
   },
   image: {
-    height: 200, // Ajusta la altura de la imagen
+    width: "100%",
+    height: 200,
+    borderRadius: 10,
   },
   title: {
     position: "absolute",
-    left: 10,
-    top: 10, // Ajusta la posición verticalq
+    top: 15,
     color: "rgb(190, 83, 1)", // Color naranja
     fontSize: 30, // Tamaño de texto más grande
     fontWeight: "bold", // Negrita para mayor visibilidad
-    backgroundColor: "rgba(255, 255, 255, 0.7)", // Fondo blanco semitransparente
-    padding: 5, // Espaciado interno
-    borderRadius: 5, // Bordes redondeados
   },
   description: {
     margin: 20,
