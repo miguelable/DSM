@@ -11,15 +11,11 @@ function RenderItem(props) {
   if (item != null) {
     return (
       <Card containerStyle={styles.cardContainer}>
-        <View style={styles.imageContainer}>
-          <Card.Image
-            source={
-              item.imagen ? item.imagen : require("./imagenes/40Años.png")
-            }
-            style={styles.image}
-          />
-          <Text style={styles.title}>{item.nombre}</Text>
-        </View>
+        <Card.Image
+          source={item.imagen ? item.imagen : require("./imagenes/40Años.png")}
+          style={styles.image}
+        />
+        <Text style={styles.title}>{item.nombre}</Text>
         <Text style={styles.description}>{item.descripcion}</Text>
       </Card>
     );
@@ -33,8 +29,6 @@ const styles = StyleSheet.create({
   cardContainer: {
     padding: 0,
     borderRadius: 10,
-  },
-  imageContainer: {
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
@@ -47,6 +41,9 @@ const styles = StyleSheet.create({
   title: {
     position: "absolute",
     top: 15,
+    left: 0,
+    right: 0,
+    textAlign: "center",
     color: "rgb(190, 83, 1)", // Color naranja
     fontSize: 30, // Tamaño de texto más grande
     fontWeight: "bold", // Negrita para mayor visibilidad
