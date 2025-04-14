@@ -5,7 +5,7 @@ export const COMENTARIOS = [
     valoracion: 5,
     comentario: "Mile esker, Gaztaroa!",
     autor: "Dani Tiendica",
-    dia: "2012-10-16T17 :57 :28.556094Z",
+    dia: "2012-10-16T17:57:28.556094Z",
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const COMENTARIOS = [
     valoracion: 4,
     comentario: "Neka neka eginda, baina bueltatuko gara, dudik gabe!",
     autor: "Aitzi Mendi",
-    dia: "2014-09-05T17 :57 :28.556094Z",
+    dia: "2014-09-05T17:57:28.556094Z",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const COMENTARIOS = [
     comentario:
       "Hemos disfrutado mucho, aunque al final se hizo un poco largo. Volveremos!",
     autor: "Marta Huarte",
-    dia: "2015-02-13T17 :57 :28.556094Z",
+    dia: "2015-02-13T17:57:28.556094Z",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const COMENTARIOS = [
     comentario:
       "Muy buena gente, pero esto no es para mi; gracias por vuestro apoyo!",
     autor: "Ziriki",
-    dia: "2013-12-02T17 :57 :28.556094Z",
+    dia: "2013-12-02T17:57:28.556094Z",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ export const COMENTARIOS = [
     comentario:
       "Estuvo genial! Alguien sabe cuándo es la próxima? Eskerrik asko!",
     autor: "Manu Colino",
-    dia: "2011-12-02T17 :57 :28.556094Z",
+    dia: "2011-12-02T17:57:28.556094Z",
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ export const COMENTARIOS = [
     comentario:
       "Estuvo genial! Alguien sabe cuándo es la próxima? Eskerrik asko!",
     autor: "Manu Colino",
-    dia: "2012-10-16T17 :57 :28.556094Z",
+    dia: "2012-10-16T17:57:28.556094Z",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ export const COMENTARIOS = [
     comentario:
       "Muy buena gente, pero esto no es para mi; gracias por vuestro apoyo!",
     autor: "Ziriki",
-    dia: "2014-09-05T17 :57 :28.556094Z",
+    dia: "2014-09-05T17:57:28.556094Z",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const COMENTARIOS = [
     comentario:
       "Hemos disfrutado mucho, aunque al final se hizo un poco largo. Volveremos!",
     autor: "Marta Huarte",
-    dia: "2015-02-13T17 :57 :28.556094Z",
+    dia: "2015-02-13T17:57:28.556094Z",
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ export const COMENTARIOS = [
     valoracion: 4,
     comentario: "Neka neka eginda, baina bueltatuko gara, dudik gabe!",
     autor: "Aitzi Mendi",
-    dia: "2013-12-02T17 :57 :28.556094Z",
+    dia: "2013-12-02T17:57:28.556094Z",
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ export const COMENTARIOS = [
     valoracion: 2,
     comentario: "Mile esker, Gaztaroa!",
     autor: "Dani Tiendica",
-    dia: "2011-12-02T17 :57 :28.556094Z",
+    dia: "2011-12-02T17:57:28.556094Z",
   },
   {
     id: 10,
@@ -91,7 +91,7 @@ export const COMENTARIOS = [
     valoracion: 5,
     comentario: "Neka neka eginda, baina bueltatuko gara, dudik gabe!",
     autor: "Aitzi Mendi",
-    dia: "2012-10-16T17 :57 :28.556094Z",
+    dia: "2012-10-16T17:57:28.556094Z",
   },
   {
     id: 11,
@@ -100,7 +100,7 @@ export const COMENTARIOS = [
     comentario:
       "Hemos disfrutado mucho, aunque al final se hizo un poco largo. Volveremos!",
     autor: "Marta Huarte",
-    dia: "2014-09-05T17 :57 :28.556094Z",
+    dia: "2014-09-05T17:57:28.556094Z",
   },
   {
     id: 12,
@@ -108,7 +108,7 @@ export const COMENTARIOS = [
     valoracion: 3,
     comentario: "Mile esker, Gaztaroa!",
     autor: "Dani Tiendica",
-    dia: "2015-02-13T17 :57 :28.556094Z",
+    dia: "2015-02-13T17:57:28.556094Z",
   },
   {
     id: 13,
@@ -117,7 +117,7 @@ export const COMENTARIOS = [
     comentario:
       "Estuvo genial! Alguien sabe cuándo es la próxima? Eskerrik asko!",
     autor: "Manu Colino",
-    dia: "2013-12-02T17 :57 :28.556094Z",
+    dia: "2013-12-02T17:57:28.556094Z",
   },
   {
     id: 14,
@@ -126,7 +126,7 @@ export const COMENTARIOS = [
     comentario:
       "Muy buena gente, pero esto no es para mi; gracias por vuestro apoyo!",
     autor: "Ziriki",
-    dia: "2011-12-02T17 :57 :28.556094Z",
+    dia: "2011-12-02T17:57:28.556094Z",
   },
   {
     id: 15,
@@ -134,7 +134,7 @@ export const COMENTARIOS = [
     valoracion: 5,
     comentario: "Mile esker, Gaztaroa!",
     autor: "Dani Tiendica",
-    dia: "2012-10-16T17 :57 :28.556094Z",
+    dia: "2012-10-16T17:57:28.556094Z",
   },
   {
     id: 16,
@@ -143,7 +143,7 @@ export const COMENTARIOS = [
     comentario:
       "Estuvo genial! Alguien sabe cuándo es la próxima? Eskerrik asko!",
     autor: "Manu Colino",
-    dia: "2014-09-05T17 :57 :28.556094Z",
+    dia: "2014-09-05T17:57:28.556094Z",
   },
   {
     id: 17,
@@ -152,7 +152,7 @@ export const COMENTARIOS = [
     comentario:
       "Muy buena gente, pero esto no es para mi; gracias por vuestro apoyo!",
     autor: "Ziriki",
-    dia: "2015-02-13T17 :57 :28.556094Z",
+    dia: "2015-02-13T17:57:28.556094Z",
   },
   {
     id: 18,
@@ -161,7 +161,7 @@ export const COMENTARIOS = [
     comentario:
       "Hemos disfrutado mucho, aunque al final se hizo un poco largo. Volveremos!",
     autor: "Marta Huarte",
-    dia: "2013-12-02T17 :57 :28.556094Z",
+    dia: "2013-12-02T17:57:28.556094Z",
   },
   {
     id: 19,
@@ -169,6 +169,6 @@ export const COMENTARIOS = [
     valoracion: 2,
     comentario: "Nada que objetar ni comentar...",
     autor: "Anónimo",
-    dia: "2011-12-02T17 :57 :28.556094Z",
+    dia: "2011-12-02T17:57:28.556094Z",
   },
 ];

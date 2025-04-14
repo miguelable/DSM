@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Text, View, ScrollView, FlatList } from "react-native";
-import { Card } from "@rneui/themed";
+import { Card, Icon } from "@rneui/themed";
 import { EXCURSIONES } from "../common/excursiones";
 import { COMENTARIOS } from "../common/comentarios";
 
 function RenderExcursion(props) {
   const excursion = props.excursion;
-
   if (excursion != null) {
     return (
       <Card>
@@ -20,6 +19,18 @@ function RenderExcursion(props) {
           }
         ></Card.Image>
         <Text style={{ margin: 20 }}>{excursion.descripcion}</Text>
+        <Icon
+          raised
+          reverse
+          name={props.favorita ? "heart" : "heart-o"}
+          type="font-awesome"
+          color="#f50"
+          onPress={() =>
+            props.favorita
+              ? console.log("La excursión ya se encuentra entre las favoritas")
+              : props.onPress()
+          }
+        />
       </Card>
     );
   } else {
@@ -50,7 +61,17 @@ function RenderComentario(props) {
             {item.autor}
           </Text>
           <Text style={{ fontSize: 13, marginTop: 10 }}>{item.comentario}</Text>
-          <Text style={{ fontSize: 12, marginTop: 10 }}>{item.dia}</Text>
+          <Text style={{ fontSize: 12, marginTop: 10 }}>
+            {new Date(item.dia).toLocaleDateString("es-ES", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })}{" "}
+            {new Date(item.dia).toLocaleTimeString("es-ES", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
+          </Text>
           <Card.Divider style={{ marginTop: 10 }} />
         </View>
       ))}
@@ -64,14 +85,24 @@ class DetalleExcursion extends Component {
     this.state = {
       excursiones: EXCURSIONES,
       comentarios: COMENTARIOS,
+      favoritos: [],
     };
+  }
+
+  marcarFavorito(excursionId) {
+    this.setState({ favoritos: this.state.favoritos.concat(excursionId) });
   }
 
   render() {
     const { excursionId } = this.props.route.params;
+
     return (
       <ScrollView>
-        <RenderExcursion excursion={this.state.excursiones[+excursionId]} />
+        <RenderExcursion
+          excursion={this.state.excursiones[+excursionId]}
+          favorita={this.state.favoritos.some((el) => el === excursionId)}
+          onPress={() => this.marcarFavorito(excursionId)}
+        />
         <RenderComentario
           comentarios={this.state.comentarios.filter(
             (comentario) => comentario.excursionId === excursionId
