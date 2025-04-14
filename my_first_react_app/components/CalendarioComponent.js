@@ -2,13 +2,28 @@ import React, { Component } from "react";
 import { ListItem, Avatar } from "@rneui/themed";
 import { SafeAreaView, FlatList } from "react-native";
 import { EXCURSIONES } from "../common/excursiones";
+import { baseUrl } from "../common/common";
 
 class Calendario extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      excursiones: EXCURSIONES,
+      excursiones: [],
     };
+  }
+
+  componentDidMount() {
+    // Obtener excursiones
+    fetch(`${baseUrl}excursiones`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener las excursiones");
+        }
+      })
+      .then((excursiones) => this.setState({ excursiones }))
+      .catch((error) => console.error(error));
   }
 
   render() {
@@ -21,7 +36,7 @@ class Calendario extends Component {
           onPress={() => navigate("DetalleExcursion", { excursionId: item.id })}
           bottomDivider
         >
-          <Avatar source={require("./imagenes/40Años.png")} />
+          <Avatar source={{ uri: baseUrl + item.imagen }} />
           <ListItem.Content>
             <ListItem.Title style={{ fontWeight: "bold" }}>
               {item.nombre}

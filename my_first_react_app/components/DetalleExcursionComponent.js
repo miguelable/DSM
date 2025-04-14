@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, ScrollView, FlatList } from "react-native";
 import { Card, Icon } from "@rneui/themed";
-import { EXCURSIONES } from "../common/excursiones";
-import { COMENTARIOS } from "../common/comentarios";
+import { colorGaztaroa, baseUrl } from "../common/common";
 
 function RenderExcursion(props) {
   const excursion = props.excursion;
@@ -11,13 +10,7 @@ function RenderExcursion(props) {
       <Card>
         <Card.Title>{excursion.nombre}</Card.Title>
         <Card.Divider />
-        <Card.Image
-          source={
-            excursion.imagen
-              ? excursion.imagen
-              : require("./imagenes/40Años.png")
-          }
-        ></Card.Image>
+        <Card.Image source={{ uri: baseUrl + excursion.imagen }}></Card.Image>
         <Text style={{ margin: 20 }}>{excursion.descripcion}</Text>
         <Icon
           raised
@@ -54,7 +47,7 @@ function RenderComentario(props) {
       <Card.Divider />
       {comentarios.map((item) => (
         <View key={item.id} style={{ margin: 10 }}>
-          <Text style={{ fontSize: 16, color: "rgb(190, 83, 1)" }}>
+          <Text style={{ fontSize: 16, color: colorGaztaroa }}>
             {renderStars(item.valoracion)}
           </Text>
           <Text style={{ fontSize: 14, fontWeight: "bold", marginTop: 5 }}>
@@ -83,10 +76,36 @@ class DetalleExcursion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      excursiones: EXCURSIONES,
-      comentarios: COMENTARIOS,
+      excursiones: [],
+      comentarios: [],
       favoritos: [],
     };
+  }
+
+  componentDidMount() {
+    // Obtener excursiones
+    fetch(`${baseUrl}excursiones`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener las excursiones");
+        }
+      })
+      .then((excursiones) => this.setState({ excursiones }))
+      .catch((error) => console.error(error));
+
+    // Obtener comentarios
+    fetch(`${baseUrl}comentarios`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener los comentarios");
+        }
+      })
+      .then((comentarios) => this.setState({ comentarios }))
+      .catch((error) => console.error(error));
   }
 
   marcarFavorito(excursionId) {

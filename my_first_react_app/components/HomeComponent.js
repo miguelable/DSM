@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Text, ScrollView, View, StyleSheet } from "react-native";
 import { Card } from "@rneui/themed";
-import { EXCURSIONES } from "../common/excursiones";
-import { CABECERAS } from "../common/cabeceras";
-import { ACTIVIDADES } from "../common/actividades";
+import { colorGaztaroa, baseUrl } from "../common/common";
 
 function RenderItem(props) {
   const item = props.item;
@@ -12,7 +10,7 @@ function RenderItem(props) {
     return (
       <Card containerStyle={styles.cardContainer}>
         <Card.Image
-          source={item.imagen ? item.imagen : require("./imagenes/40Años.png")}
+          source={{ uri: baseUrl + item.imagen }}
           style={styles.image}
         />
         <Text style={styles.title}>{item.nombre}</Text>
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     textAlign: "center",
-    color: "rgb(190, 83, 1)", // Color naranja
+    color: colorGaztaroa, // Color naranja
     fontSize: 30, // Tamaño de texto más grande
     fontWeight: "bold", // Negrita para mayor visibilidad
   },
@@ -57,10 +55,48 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      excursiones: EXCURSIONES,
-      cabeceras: CABECERAS,
-      actividades: ACTIVIDADES,
+      excursiones: [],
+      cabeceras: [],
+      actividades: [],
     };
+  }
+
+  componentDidMount() {
+    // Obtener excursiones
+    fetch(`${baseUrl}excursiones`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener las excursiones");
+        }
+      })
+      .then((excursiones) => this.setState({ excursiones }))
+      .catch((error) => console.error(error));
+
+    // Obtener cabeceras
+    fetch(`${baseUrl}cabeceras`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener las cabeceras");
+        }
+      })
+      .then((cabeceras) => this.setState({ cabeceras }))
+      .catch((error) => console.error(error));
+
+    // Obtener actividades
+    fetch(`${baseUrl}actividades`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener las actividades");
+        }
+      })
+      .then((actividades) => this.setState({ actividades }))
+      .catch((error) => console.error(error));
   }
 
   render() {

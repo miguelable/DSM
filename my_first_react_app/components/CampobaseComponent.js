@@ -14,6 +14,7 @@ import Contacto from "./ContactoComponent";
 import QuienesSomos from "./QuienesSomosComponent";
 import { Icon } from "@rneui/themed";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { colorGaztaroa, colorGaztaroaHeader } from "../common/common";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -25,7 +26,7 @@ function CalendarioNavegador() {
       headerMode="float"
       screenOptions={{
         headerTintColor: "#fff", // Texto blanco
-        headerStyle: { backgroundColor: "rgb(190, 83, 1)" }, // Color del logo
+        headerStyle: { backgroundColor: colorGaztaroa }, // Color del logo
         headerTitleStyle: { color: "#fff" },
         headerShown: true,
       }}
@@ -56,7 +57,7 @@ function HomeNavegador() {
       screenOptions={{
         headerMode: "screen",
         headerTintColor: "#fff", // Texto blanco
-        headerStyle: { backgroundColor: "rgb(190, 83, 1)" }, // Color del logo
+        headerStyle: { backgroundColor: colorGaztaroa }, // Color del logo
         headerTitleStyle: { color: "#fff" },
         headerShown: false,
       }}
@@ -73,7 +74,7 @@ function ContactoNavegator() {
       screenOptions={{
         headerMode: "screen",
         headerTintColor: "#fff", // Texto blanco
-        headerStyle: { backgroundColor: "rgb(190, 83, 1)" }, // Color del logo
+        headerStyle: { backgroundColor: colorGaztaroa }, // Color del logo
         headerTitleStyle: { color: "#fff" },
         headerShown: false,
       }}
@@ -90,7 +91,7 @@ function HistoriaNavegator() {
       screenOptions={{
         headerMode: "screen",
         headerTintColor: "#fff", // Texto blanco
-        headerStyle: { backgroundColor: "rgb(190, 83, 1)" }, // Color del logo
+        headerStyle: { backgroundColor: colorGaztaroa }, // Color del logo
         headerTitleStyle: { color: "#fff" },
         headerShown: false,
       }}
@@ -131,7 +132,7 @@ function DrawerNavegador() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
         drawerStyle: {
-          backgroundColor: "rgb(190, 83, 1)", // Color del fondo del menú desplegable
+          backgroundColor: colorGaztaroa, // Color del fondo del menú desplegable
         },
         drawerActiveTintColor: "#fff", // Color del texto o icono activo
         drawerInactiveTintColor: "#000", // Color del texto o icono inactivo
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   drawerHeader: {
-    backgroundColor: "rgb(196, 98, 24)", // Color del fondo del encabezado
+    backgroundColor: colorGaztaroaHeader, // Color del fondo del encabezado
     height: 100,
     alignItems: "center",
     justifyContent: "center",

@@ -2,14 +2,29 @@ import React, { Component } from "react";
 import { Text, View, ScrollView, Image } from "react-native";
 import { Card } from "@rneui/themed";
 import Historia from "./HistoriaComponent";
-import { ACTIVIDADES } from "../common/actividades";
+import { baseUrl } from "../common/common";
 
 class QuienesSomos extends Component {
   constructor(props) {
     super(props);
     this.state = {
       informacion: [],
+      actividades: [],
     };
+  }
+
+  componentDidMount() {
+    // Obtener actividades de la API
+    fetch(`${baseUrl}actividades`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error al obtener las actividades");
+        }
+      })
+      .then((actividades) => this.setState({ actividades }))
+      .catch((error) => console.error(error));
   }
 
   render() {
@@ -20,7 +35,7 @@ class QuienesSomos extends Component {
           <Card>
             <Card.Title>Actividades y Recursos</Card.Title>
             <Card.Divider />
-            {ACTIVIDADES.map((actividad, index) => (
+            {this.state.actividades.map((actividad, index) => (
               <View key={actividad.id}>
                 <View
                   style={{
@@ -30,7 +45,7 @@ class QuienesSomos extends Component {
                   }}
                 >
                   <Image
-                    source={require("./imagenes/40Años.png")} // Cambia esta ruta según la imagen de cada actividad
+                    source={{ uri: baseUrl + actividad.imagen }}
                     style={{ width: 30, height: 30, marginRight: 10 }}
                   />
                   <View style={{ flex: 1 }}>
@@ -40,7 +55,7 @@ class QuienesSomos extends Component {
                     <Text>{actividad.descripcion}</Text>
                   </View>
                 </View>
-                {index < ACTIVIDADES.length - 1 && (
+                {index < this.state.actividades.length - 1 && (
                   <Card.Divider style={{ marginVertical: 10 }} />
                 )}
               </View>
