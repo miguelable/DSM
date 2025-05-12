@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.8.5",
+    "axios": "^1.9.0",
     "expo": "~52.0.46",
+    "expo-camera": "~16.0.18",
+    "expo-mail-composer": "~14.0.2",
+    "expo-router": "~4.0.21",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
     "react-native": "0.76.9",
-    "react-redux": "7.2.9",
-    "react-native-qrcode-svg": "6.2.0"
+    "react-native-qrcode-svg": "6.2.0",
+    "react-redux": "7.2.9"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
